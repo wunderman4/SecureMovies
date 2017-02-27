@@ -1,0 +1,25 @@
+<div class="col-xs-6" ng-show="!account.isLoggedIn()">
+    <h2>Please log in to see list of movies!</h2>
+</div>
+<div class="col-xs-8" ng-show="account.isLoggedIn()" >
+    <h1>Movies</h1>
+    <br>
+    <div class="jumbotron">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Director</th>
+                </tr>
+            </thead>
+            <tbody id='actorTable'>
+                <tr ng-repeat="movie in controller.movies">
+
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.director}}</td>
+                    <td><button class="btn btn-danger" ng-click="controller.deleteMovie(actor.id)">Delete </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
